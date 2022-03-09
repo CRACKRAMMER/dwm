@@ -103,6 +103,7 @@ static const char *qemucmd[]  = { "virt-manager", NULL };
 static const char *vlccmd[]  = { "vlc", NULL };
 static const char *musiccmd[]  = { "netease-cloud-music", NULL };
 static const char *obscmd[]  = { "obs", NULL };
+static const char *remminacmd[]  = { "remmina", NULL };
 static const char *steamcmd[]  = { "steam-native", NULL };
 static const char *lutriscmd[]  = { "lutris", NULL };
 
@@ -146,6 +147,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,    XK_v,                    spawn,          {.v = vlccmd } },
 	{ MODKEY|ShiftMask,    XK_m,                    spawn,          {.v = musiccmd } },
 	{ MODKEY|ShiftMask,    XK_o,                    spawn,          {.v = obscmd } },
+	{ MODKEY|ShiftMask,    XK_r,                    spawn,          {.v = remminacmd } },
 	{ MODKEY|ShiftMask,    XK_s,                    spawn,          {.v = steamcmd } },
 	{ MODKEY|ShiftMask,    XK_l,                    spawn,          {.v = lutriscmd } },
 	{ MODKEY|ControlMask,  XK_q,                    spawn,          {.v = suspendcmd } },
