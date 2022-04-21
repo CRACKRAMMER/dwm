@@ -85,7 +85,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "st", NULL };
 static const char *thunarcmd[]  = { "thunar", NULL };
 static const char *baiducmd[]  = { "baidunetdisk", NULL };
-static const char *chromecmd[]  = { "google-chrome-stable", NULL };
+static const char *chromecmd[]  = { "google-chrome-stable", "--password-store=basic", NULL };
 static const char *firefoxcmd[]  = { "firefox", NULL };
 static const char *torcmd[]  = { "tor-browser", NULL };
 
