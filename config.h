@@ -107,20 +107,25 @@ static const char *remminacmd[]  = { "remmina", NULL };
 static const char *steamcmd[]  = { "steam-native", NULL };
 static const char *lutriscmd[]  = { "lutris", NULL };
 
-static const char *upvol[]   = { "/home/xiechengan/.scripts/vol-up.sh",  NULL };
-static const char *downvol[] = { "/home/xiechengan/.scripts/vol-down.sh",  NULL };
-static const char *mutevol[] = { "/home/xiechengan/.scripts/vol-toggle.sh",  NULL };
+static const char *upvol[]   = { "/etc/dwm-scripts/vol-up.sh",  NULL };
+static const char *downvol[] = { "/etc/dwm-scripts/vol-down.sh",  NULL };
+static const char *mutevol[] = { "/etc/dwm-scripts/vol-toggle.sh",  NULL };
 
-static const char *wpcmd[]  = { "/home/xiechengan/.scripts/wp-change.sh", NULL };
+static const char *xdisplay[] = { "/etc/dwm-scripts/xdisplay.sh",  NULL };
+static const char *toggleotherdisplay[] = { "/etc/dwm-scripts/toggle-other-display.sh",  NULL };
+static const char *toggledisplay[] = { "/etc/dwm-scripts/toggle-display.sh",  NULL };
+static const char *togglealldisplay[] = { "/etc/dwm-scripts/toggle-all-display.sh",  NULL };
+
+static const char *wpcmd[]  = { "/etc/dwm-scripts/wp-change.sh", NULL };
 static const char *slockcmd[]  = { "slock", NULL };
-static const char *sktogglecmd[]  = { "/home/xiechengan/.scripts/sck-tog.sh", NULL };
+static const char *sktogglecmd[]  = { "/etc/dwm-scripts/sck-tog.sh", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "80x24", NULL };
 
-static const char *setcolemakcmd[]  = { "/home/xiechengan/.scripts/setxmodmap-colemak.sh", NULL };
-static const char *setqwertycmd[]  = { "/home/xiechengan/.scripts/setxmodmap-qwerty.sh", NULL };
+static const char *setcolemakcmd[]  = { "/etc/dwm-scripts/setxmodmap-colemak.sh", NULL };
+static const char *setqwertycmd[]  = { "/etc/dwm-scripts/setxmodmap-qwerty.sh", NULL };
 
-static const char *suspendcmd[]  = { "/home/xiechengan/.scripts/suspend.sh", NULL };
+static const char *suspendcmd[]  = { "/etc/dwm-scripts/suspend.sh", NULL };
 
 static const char *screenshotcmd[] = { "flameshot", "gui", NULL };
 
@@ -160,6 +165,10 @@ static Key keys[] = {
 	{ MODKEY,              XK_bracketleft,          spawn,          {.v = downvol } },
 	{ MODKEY,              XK_backslash,            spawn,          {.v = mutevol } },
 	{ MODKEY,              XK_bracketright,         spawn,          {.v = upvol   } },
+	{ MODKEY,              XK_less,                 spawn,          {.v = xdisplay   } },
+	{ MODKEY,              XK_less,                 spawn,          {.v = toggleotherdisplay   } },
+	{ MODKEY|ControlMask,  XK_greater,              spawn,          {.v = toggledisplay } },
+	{ MODKEY|ControlMask,  XK_greater,              spawn,          {.v = togglealldisplay } },
 	{ 0,                   XK_Print,                spawn,          {.v = screenshotcmd } },
 	{ MODKEY|ControlMask,  XK_j,                    rotatestack,    {.i = +1 } },
 	{ MODKEY|ControlMask,  XK_k,                    rotatestack,    {.i = -1 } },
