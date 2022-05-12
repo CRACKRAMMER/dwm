@@ -111,8 +111,7 @@ static const char *upvol[]   = { "/etc/dwm-scripts/vol-up.sh",  NULL };
 static const char *downvol[] = { "/etc/dwm-scripts/vol-down.sh",  NULL };
 static const char *mutevol[] = { "/etc/dwm-scripts/vol-toggle.sh",  NULL };
 
-static const char *primaryinfo[] = { "/etc/dwm-scripts/dwm-status.sh",  "new", NULL };
-static const char *secondinfo[] = { "/etc/dwm-scripts/dwm-status.sh",  "new", "hardware", NULL };
+static const char *toggleinfo[] = { "/etc/dwm-scripts/dwm-status.sh",  "new", NULL };
 
 static const char *xdisplay[] = { "/etc/dwm-scripts/xdisplay.sh",  NULL };
 static const char *toggleotherdisplay[] = { "/etc/dwm-scripts/toggle-other-display.sh",  NULL };
@@ -136,6 +135,7 @@ static const char *screenshotcmd[] = { "flameshot", "gui", NULL };
 static Key keys[] = {
 	/* modifier            key                      function        argument */
 	{ MODKEY,              XK_s,                    spawn,          {.v = dmenucmd } },
+	{ MODKEY,              XK_w,                    spawn,          {.v = toggleinfo } },
 	{ MODKEY,              XK_Return,               spawn,          {.v = termcmd } },
 	{ MODKEY|ShiftMask,    XK_Return,               spawn,          {.v = thunarcmd } },
 	{ MODKEY|ShiftMask,    XK_b,                    spawn,          {.v = baiducmd } },
@@ -161,8 +161,6 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,    XK_l,                    spawn,          {.v = lutriscmd } },
 	{ MODKEY|ControlMask,  XK_p,                    spawn,          {.v = suspendcmd } },
 	{ MODKEY|ControlMask,  XK_s,                    spawn,          {.v = sktogglecmd } },
-	{ MODKEY,              XK_w,                    spawn,          {.v = primaryinfo } },
-	{ MODKEY|ControlMask,  XK_w,                    spawn,          {.v = secondinfo } },
 	{ MODKEY,              XK_b,                    spawn,          {.v = wpcmd } },
 	{ MODKEY|ControlMask,  XK_b,                    spawn,          {.v = wvcmd } },
 	{ MODKEY|ControlMask,  XK_e,                    spawn,          {.v = slockcmd } },
