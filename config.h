@@ -111,8 +111,8 @@ static const char *upvol[]   = { "/etc/dwm-scripts/vol-up.sh",  NULL };
 static const char *downvol[] = { "/etc/dwm-scripts/vol-down.sh",  NULL };
 static const char *mutevol[] = { "/etc/dwm-scripts/vol-toggle.sh",  NULL };
 
-static const char *primaryinfo[] = { "/etc/dwm-scripts/dwm-status.sh",  "new" };
-static const char *secondinfo[] = { "/etc/dwm-scripts/dwm-status.sh",  "new", "hardware" };
+static const char *primaryinfo[] = { "/etc/dwm-scripts/dwm-status.sh",  "new", NULL };
+static const char *secondinfo[] = { "/etc/dwm-scripts/dwm-status.sh",  "new", "hardware", NULL };
 
 static const char *xdisplay[] = { "/etc/dwm-scripts/xdisplay.sh",  NULL };
 static const char *toggleotherdisplay[] = { "/etc/dwm-scripts/toggle-other-display.sh",  NULL };
