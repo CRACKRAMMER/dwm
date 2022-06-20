@@ -1759,7 +1759,7 @@ run(void)
 
 void
 runAutostart(void) {
-	system("cd /etc/dwm-scripts; ./autostart.sh &");
+	system("cd ~/.dwm-scripts; ./autostart.sh &");
 }
 
 void
