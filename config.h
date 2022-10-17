@@ -87,13 +87,14 @@ static const char *thunarcmd[]  = { "thunar", NULL };
 static const char *baiducmd[]  = { "baidunetdisk", NULL };
 static const char *chromecmd[]  = { "google-chrome-stable", "--password-store=basic", NULL };
 static const char *firefoxcmd[]  = { "firefox", NULL };
+static const char *edgecmd[]  = { "microsoft-edge-stable", NULL };
 static const char *torcmd[]  = { "tor-browser", NULL };
 
 static const char *vscodecmd[]  = { "code", NULL };
 static const char *pycharmcmd[]  = { "pycharm", NULL };
 static const char *ideacmd[]  = { "idea", NULL };
 static const char *markdowncmd[]  = { "marktext", "-n", NULL };
-static const char *textcmd[]  = { "atom", NULL };
+static const char *textcmd[]  = { "nvim-gt", NULL };
 static const char *geometrycmd[]  = { "geogebra", NULL };
 static const char *androidstudiocmd[]  = { "android-studio", NULL };
 static const char *qtcmd[]  = { "qtcreator", NULL };
@@ -141,6 +142,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,    XK_b,                    spawn,          {.v = baiducmd } },
 	{ MODKEY|ShiftMask,    XK_g,                    spawn,          {.v = chromecmd } },
 	{ MODKEY|ShiftMask,    XK_f,                    spawn,          {.v = firefoxcmd } },
+	{ MODKEY|ShiftMask,    XK_w,                    spawn,          {.v = edgecmd } },
 	{ MODKEY|ShiftMask,    XK_h,                    spawn,          {.v = torcmd } },
 	{ MODKEY|ShiftMask,    XK_d,                    spawn,          {.v = geometrycmd } },
 	{ MODKEY|ShiftMask,    XK_c,                    spawn,          {.v = vscodecmd } },
