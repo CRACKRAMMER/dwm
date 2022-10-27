@@ -110,6 +110,8 @@ static const char *lutriscmd[]  = { "lutris", NULL };
 
 static const char *upvol[]   = { "/home/xiechengan/.dwm-scripts/vol-up.sh",  NULL };
 static const char *downvol[] = { "/home/xiechengan/.dwm-scripts/vol-down.sh",  NULL };
+static const char *uplight[]   = { "/home/xiechengan/.dwm-scripts/backlight-up.sh",  NULL };
+static const char *downlight[] = { "/home/xiechengan/.dwm-scripts/backlight-down.sh",  NULL };
 static const char *mutevol[] = { "/home/xiechengan/.dwm-scripts/vol-toggle.sh",  NULL };
 
 static const char *toggleinfo[] = { "/home/xiechengan/.dwm-scripts/dwm-status.sh",  "new", NULL };
@@ -169,9 +171,11 @@ static Key keys[] = {
 	{ 0,                   XF86XK_AudioLowerVolume, spawn,          {.v = downvol } },
 	{ 0,                   XF86XK_AudioMute,        spawn,          {.v = mutevol } },
 	{ 0,                   XF86XK_AudioRaiseVolume, spawn,          {.v = upvol   } },
-	{ MODKEY,              XK_bracketleft,          spawn,          {.v = downvol } },
 	{ MODKEY,              XK_backslash,            spawn,          {.v = mutevol } },
+	{ MODKEY,              XK_bracketleft,          spawn,          {.v = downvol } },
 	{ MODKEY,              XK_bracketright,         spawn,          {.v = upvol   } },
+	{ MODKEY|ControlMask,  XK_bracketleft,          spawn,          {.v = downlight } },
+	{ MODKEY|ControlMask,  XK_bracketright,         spawn,          {.v = uplight   } },
 	{ MODKEY,              XK_minus,                spawn,          {.v = xdisplay   } },
 	{ MODKEY|ControlMask,  XK_minus,                spawn,          {.v = toggleotherdisplay   } },
 	{ MODKEY,              XK_equal,                spawn,          {.v = toggledisplay } },
