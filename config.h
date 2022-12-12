@@ -3,6 +3,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
+static const int newclientathead = 0;
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
@@ -64,8 +65,9 @@ static const int resizehints = 1;    /* 1 means respect size hints in tiled resi
 static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "Tile",      tile },    /* first entry is default */
-	{ "><>",      NULL },    /* no layout function means floating behavior */
+	{ "Grid",      grid },    /* first entry is default */
 	{ "[M]",      monocle },
+	{ "><>",      NULL },    /* no layout function means floating behavior */
 };
 
 /* key definitions */
@@ -201,6 +203,7 @@ static Key keys[] = {
 	{ MODKEY,              XK_Tab,                  view,           {0} },
 	{ MODKEY,              XK_q,                    killclient,     {0} },
 	{ MODKEY,              XK_t,                    setlayout,      {.v = &layouts[0]} },
+	{ MODKEY,              XK_g,                    setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,              XK_v,                    setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,              XK_f,                    fullscreen,     {0} },
 	{ MODKEY,              XK_space,                setlayout,      {0} },

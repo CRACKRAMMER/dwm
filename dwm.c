@@ -259,6 +259,7 @@ static void tagmon(const Arg *arg);
 static void tagtoleft(const Arg *arg);
 static void tagtoright(const Arg *arg);
 static void tile(Monitor *);
+static void grid(Monitor *);
 static void togglebar(const Arg *arg);
 static void togglefloating(const Arg *arg);
 static void togglescratch(const Arg *arg);
@@ -332,9 +333,6 @@ static Cur *cursor[CurLast];
 static Clr **scheme;
 static Display *dpy;
 static Drw *drw;
-static Monitor *mons, *selmon;
-static Window root, wmcheckwin;
-
 static int useargb = 0;
 static Visual *visual;
 static int depth;
@@ -492,8 +490,15 @@ arrangemon(Monitor *m)
 void
 attach(Client *c)
 {
-	c->next = c->mon->clients;
-	c->mon->clients = c;
+    if (!newclientathead) {
+        Client **tc;
+        for (tc = &c->mon->clients; *tc; tc = &(*tc)->next);
+        *tc = c;
+        c->next = NULL;
+    } else {
+        c->next = c->mon->clients;
+        c->mon->clients = c;
+    }
 }
 
 void
@@ -1496,8 +1501,10 @@ void
 pop(Client *c)
 {
 	detach(c);
-	attach(c);
-	focus(c);
+	// attach(c);
+    c->next = c->mon->clients;
+    c->mon->clients = c;
+    focus(c);
 	arrange(c->mon);
 }
 
@@ -2153,6 +2160,72 @@ tile(Monitor *m)
 		}
 }
 
+void
+grid(Monitor *m)
+{
+    unsigned int i, n;
+    unsigned int cx, cy, cw, ch;
+    unsigned int dx;
+    unsigned int cols, rows, overcols;
+    Client *c;
+
+    for (n = 0, c = nexttiled(m->clients); c; c = nexttiled(c->next), n++);
+    if (n == 0) return;
+    if (n == 1) {
+        c = nexttiled(m->clients);
+        cw = (m->ww - 2 * gappov) * 0.7;
+        ch = (m->wh - 2 * gappoh) * 0.65;
+        resize(c,
+               m->mx + (m->mw - cw) / 2 + gappov,
+               m->my + (m->mh - ch) / 2 + gappoh,
+               cw - 2 * c->bw,
+               ch - 2 * c->bw,
+               0);
+        return;
+    }
+    if (n == 2) {
+        c = nexttiled(m->clients);
+        cw = (m->ww - 2 * gappov - gappiv) / 2;
+        ch = (m->wh - 2 * gappoh) * 0.65;
+        resize(c,
+               m->mx + gappov,
+               m->my + (m->mh - ch) / 2 + gappoh,
+               cw - 2 * c->bw,
+               ch - 2 * c->bw,
+               0);
+        resize(nexttiled(c->next),
+               m->mx + cw + gappov + gappiv,
+               m->my + (m->mh - ch) / 2 + gappoh,
+               cw - 2 * c->bw,
+               ch - 2 * c->bw,
+               0);
+        return;
+    }
+
+    for (cols = 0; cols <= n / 2; cols++)
+        if (cols * cols >= n)
+            break;
+    rows = (cols && (cols - 1) * cols >= n) ? cols - 1 : cols;
+	ch = (m->wh - 2 * gappoh - (rows - 1) * gappih) / rows;
+	cw = (m->ww - 2 * gappov - (cols - 1) * gappiv) / cols;
+
+    overcols = n % cols;
+    if (overcols)
+        dx = (m->ww - overcols * cw - (overcols - 1) * gappiv) / 2 - gappoh;
+	for(i = 0, c = nexttiled(m->clients); c; c = nexttiled(c->next), i++) {
+        cx = m->wx + (i % cols) * (cw + gappiv);
+        cy = m->wy + (i / cols) * (ch + gappih);
+        if (overcols && i >= n - overcols) {
+            cx += dx;
+        }
+        resize(c,
+               cx + gappov,
+               cy + gappoh,
+               cw - 2 * c->bw,
+               ch - 2 * c->bw,
+               0);
+	}
+}
 void
 togglebar(const Arg *arg)
 {
