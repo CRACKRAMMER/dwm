@@ -110,30 +110,30 @@ static const char *remminacmd[]  = { "remmina", NULL };
 static const char *steamcmd[]  = { "steam-native", NULL };
 static const char *lutriscmd[]  = { "lutris", NULL };
 
-static const char *upvol[]   = { "/home/xiechengan/.dwm-scripts/vol-up.sh",  NULL };
-static const char *downvol[] = { "/home/xiechengan/.dwm-scripts/vol-down.sh",  NULL };
-static const char *uplight[]   = { "/home/xiechengan/.dwm-scripts/backlight-up.sh",  NULL };
-static const char *downlight[] = { "/home/xiechengan/.dwm-scripts/backlight-down.sh",  NULL };
-static const char *mutevol[] = { "/home/xiechengan/.dwm-scripts/vol-toggle.sh",  NULL };
+static const char *upvol[]   = { "vol-up.sh",  NULL };
+static const char *downvol[] = { "vol-down.sh",  NULL };
+static const char *uplight[]   = { "backlight-up.sh",  NULL };
+static const char *downlight[] = { "backlight-down.sh",  NULL };
+static const char *mutevol[] = { "vol-toggle.sh",  NULL };
 
-static const char *toggleinfo[] = { "/home/xiechengan/.dwm-scripts/dwm-status.sh",  "new", NULL };
+static const char *toggleinfo[] = { "dwm-status.sh",  "new", NULL };
 
-static const char *xdisplay[] = { "/home/xiechengan/.dwm-scripts/xdisplay.sh",  NULL };
-static const char *toggleotherdisplay[] = { "/home/xiechengan/.dwm-scripts/toggle-other-display.sh",  NULL };
-static const char *toggledisplay[] = { "/home/xiechengan/.dwm-scripts/toggle-display.sh",  NULL };
-static const char *togglealldisplay[] = { "/home/xiechengan/.dwm-scripts/toggle-all-display.sh",  NULL };
+static const char *xdisplay[] = { "xdisplay.sh",  NULL };
+static const char *toggleotherdisplay[] = { "toggle-other-display.sh",  NULL };
+static const char *toggledisplay[] = { "toggle-display.sh",  NULL };
+static const char *togglealldisplay[] = { "toggle-all-display.sh",  NULL };
 
-static const char *wpcmd[]  = { "/home/xiechengan/.dwm-scripts/wp-change.sh", NULL };
-static const char *wvcmd[]  = { "/home/xiechengan/.dwm-scripts/wv-player.sh", NULL };
+static const char *wpcmd[]  = { "wp-change.sh", NULL };
+static const char *wvcmd[]  = { "wv-player.sh", NULL };
 static const char *slockcmd[]  = { "slock", NULL };
-static const char *sktogglecmd[]  = { "/home/xiechengan/.dwm-scripts/sck-tog.sh", NULL };
+static const char *sktogglecmd[]  = { "sck-tog.sh", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "80x24", NULL };
 
-static const char *setcolemakcmd[]  = { "/home/xiechengan/.dwm-scripts/setxmodmap-colemak.sh", NULL };
-static const char *setqwertycmd[]  = { "/home/xiechengan/.dwm-scripts/setxmodmap-qwerty.sh", NULL };
+static const char *setcolemakcmd[]  = { "setxmodmap-colemak.sh", NULL };
+static const char *setqwertycmd[]  = { "setxmodmap-qwerty.sh", NULL };
 
-static const char *suspendcmd[]  = { "/home/xiechengan/.dwm-scripts/suspend.sh", NULL };
+static const char *suspendcmd[]  = { "suspend.sh", NULL };
 
 static const char *screenshotcmd[] = { "flameshot", "gui", NULL };
 
