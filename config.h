@@ -123,8 +123,8 @@ static const char *toggleotherdisplay[] = { "toggle-other-display.sh",  NULL };
 static const char *toggledisplay[] = { "toggle-display.sh",  NULL };
 static const char *togglealldisplay[] = { "toggle-all-display.sh",  NULL };
 
-static const char *wpcmd[]  = { "wp-change.sh", NULL };
-static const char *wvcmd[]  = { "wv-player.sh", NULL };
+static const char *wpcmd[]  = { "randomWallpaper.sh", NULL };
+static const char *wvcmd[]  = { "randomVideoWallpaper.sh", NULL };
 static const char *slockcmd[]  = { "slock", NULL };
 static const char *sktogglecmd[]  = { "sck-tog.sh", NULL };
 static const char scratchpadname[] = "scratchpad";
