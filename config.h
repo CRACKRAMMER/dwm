@@ -110,11 +110,11 @@ static const char *remminacmd[]  = { "remmina", NULL };
 static const char *steamcmd[]  = { "steam-native", NULL };
 static const char *lutriscmd[]  = { "lutris", NULL };
 
-static const char *upvol[]   = { "vol-up.sh",  NULL };
-static const char *downvol[] = { "vol-down.sh",  NULL };
-static const char *uplight[]   = { "backlight-up.sh",  NULL };
-static const char *downlight[] = { "backlight-down.sh",  NULL };
-static const char *mutevol[] = { "vol-toggle.sh",  NULL };
+static const char *upvol[]   = { "volumeControl.sh", "up", NULL };
+static const char *downvol[] = { "volumeControl.sh", "down",  NULL };
+static const char *uplight[]   = { "brightnessControl.sh", "up", NULL };
+static const char *downlight[] = { "brightnessControl.sh", "down", NULL };
+static const char *mutevol[] = { "brightnessControl.sh", "toggle", NULL };
 
 static const char *toggleinfo[] = { "dwm-status.sh",  "new", NULL };
 
