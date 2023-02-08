@@ -129,6 +129,7 @@ static const char *slockcmd[]  = { "slock", NULL };
 static const char *sktogglecmd[]  = { "sck-tog.sh", NULL };
 static const char *snapshotcmd[]  = { "snapshot.sh", NULL };
 static const char *transtifycmd[]  = { "transtify.sh", NULL };
+static const char *scriptmanagercmd[]  = { "scriptsManager.sh", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "80x24", NULL };
 
@@ -144,6 +145,7 @@ static Key keys[] = {
 	{ MODKEY,              XK_s,                    spawn,          {.v = dmenucmd } },
 	{ MODKEY,              XK_w,                    spawn,          {.v = toggleinfo } },
 	{ MODKEY,              XK_Return,               spawn,          {.v = termcmd } },
+	{ MODKEY,              XK_p,                    spawn,          {.v = scriptmanagercmd } },
 	{ MODKEY|ShiftMask,    XK_Return,               spawn,          {.v = thunarcmd } },
 	{ MODKEY|ShiftMask,    XK_b,                    spawn,          {.v = baiducmd } },
 	{ MODKEY|ShiftMask,    XK_g,                    spawn,          {.v = chromecmd } },
